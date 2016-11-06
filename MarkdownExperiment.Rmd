@@ -1,0 +1,47 @@
+---
+title: "BringingItAllTogether"
+author: "Lauren&Younis"
+date: "November 6, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r ThreeCountries}
+dat <- read.csv(file="data/gapminder.csv", header=TRUE)
+head(dat)
+summary(dat)
+str(dat)
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r ThreeCountriesPlots, echo=FALSE}
+mycountries <- c("Guatemala", "Honduras", "Netherlands")
+three_countries_fun <- function(mycountries) {
+  for (w in mycountries) {
+    print(w)
+    country_name <- subset(dat, dat$country == w)
+    plot(country_name$year, country_name$gdpPercap, 
+         xlab = "Year", ylab = "GDP", main=w)
+  }
+}
+
+three_countries_fun(mycountries)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+Guatemala's GDP increased exponentially from 1950 to around 1980, peaking at around 5000. It then decreased to less than 4500 in ~1986, before steadily increasing again.
+Honduras' GDP increased steadily from 1950 to ~1972, before increasing sharply from ~1972 to 1976, peaking at around 3200. 
