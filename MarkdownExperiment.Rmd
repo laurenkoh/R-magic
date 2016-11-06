@@ -44,4 +44,5 @@ three_countries_fun(mycountries)
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 Guatemala's GDP increased exponentially from 1950 to around 1980, peaking at around 5000. It then decreased to less than 4500 in ~1986, before steadily increasing again.
-Honduras' GDP increased steadily from 1950 to ~1972, before increasing sharply from ~1972 to 1976, peaking at around 3200. 
+Honduras' GDP increased steadily from 1950 to ~1972, before increasing sharply from ~1972 to 1976, peaking at around 3200. The GDP remains relatively stable until ~2000, increasing again in ~2010.
+Netherland's GDP increases steadily over 50 years.
